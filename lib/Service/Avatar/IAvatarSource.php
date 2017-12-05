@@ -24,9 +24,14 @@
 
 namespace OCA\Mail\Service\Avatar;
 
-use OCP\Files\IMimeTypeDetector;
-
 interface IAvatarSource {
+
+	/**
+	 * Does this source query external services?
+	 *
+	 * @return bool
+	 */
+	public function isExternal();
 
 	/**
 	 * @param string $email sender email address
