@@ -35,6 +35,10 @@ class PreferencesController extends Controller {
 	/** @var IUserPreferences */
 	private $userPreference;
 
+	/**
+	 * @param IRequest $request
+	 * @param IUserPreferences $userPreference
+	 */
 	public function __construct(IRequest $request, IUserPreferences $userPreference) {
 		parent::__construct('mail', $request);
 		$this->userPreference = $userPreference;
@@ -64,7 +68,7 @@ class PreferencesController extends Controller {
 			return new JSONResponse(null, Http::STATUS_BAD_REQUEST);
 		}
 
-		$this->userPreference->getPreference($key, $value);
+		$this->userPreference->setPreference($key, $value);
 
 		return new JSONResponse();
 	}
