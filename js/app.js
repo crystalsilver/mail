@@ -42,11 +42,12 @@ define(function(require) {
 	require('service/accountservice');
 	require('service/aliasesservice');
 	require('service/attachmentservice');
+	require('service/backgroundsyncservice');
 	require('service/davservice');
 	require('service/folderservice');
 	require('service/foldersyncservice');
 	require('service/messageservice');
-	require('service/backgroundsyncservice');
+	require('service/preferenceservice');
 	require('util/notificationhandler');
 
 	var Mail = Marionette.Application.extend({
